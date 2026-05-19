@@ -1,0 +1,188 @@
+/* Global Styles */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+} 
+
+body { 
+    background-color: white;
+    background-image: url('../gambar/wallhaven-2.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+} 
+
+/* UKURAN FORM DIPERBESAR */
+.login-box { 
+    background: rgba(255, 255, 255, 0.06); 
+    padding: 50px; /* Diperbesar dari 40px */
+    border-radius: 24px; /* Diperbesar dari 20px */
+    border: 1px solid rgba(255, 255, 255, 0.14); 
+    width: 460px; /* Diperbesar dari 360px */
+    color: white; 
+    text-align: center; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Tambahan bayangan agar lebih tegas */
+} 
+
+/* Tab Switcher */
+.tab-switch { 
+    display: flex; 
+    justify-content: center; 
+    gap: 12px; 
+    margin-bottom: 35px; /* Jarak diperbesar dari 25px */
+} 
+
+.tab-button { 
+    flex: 1; 
+    padding: 14px 0; /* Diperbesar dari 10px */
+    border: none; 
+    border-radius: 14px; 
+    background: rgba(255, 255, 255, 0.08); 
+    color: rgb(0, 0, 0); 
+    cursor: pointer; 
+    font-weight: 600; 
+    font-size: 1rem; /* Tambahan ukuran teks tab */
+    transition: background 0.2s ease; 
+} 
+
+.tab-button.active { 
+    background: rgba(255, 255, 255, 1); 
+    color: #2c1a4d; 
+} 
+
+.form-container { 
+    display: none; 
+} 
+
+.form-container.active { 
+    display: block; 
+} 
+
+h2 { 
+    font-size: 2.4rem; /* Diperbesar dari 2rem */
+    margin-bottom: 35px; /* Diperbesar dari 30px */
+} 
+
+/* Elemen Input Group */
+.input-group { 
+    text-align: left; 
+    margin-bottom: 28px; /* Jarak antar input diperbesar dari 20px */
+} 
+
+.input-group label { 
+    display: block; 
+    font-size: 1rem; /* Diperbesar dari 0.9rem */
+    margin-bottom: 8px; 
+} 
+
+.input-group input { 
+    width: 100%; 
+    background: transparent; 
+    border: none; 
+    border-bottom: 2px solid rgb(255, 255, 255); /* Dipertebal dari 1px */
+    color: rgb(255, 255, 255); 
+    padding: 12px 0; /* Diperbesar dari 8px */
+    font-size: 1.05rem; /* Tambahan ukuran teks input */
+    outline: none; 
+    padding-right: 46px; 
+} 
+
+.input-group input::placeholder { 
+    color: rgba(255, 255, 255, 0.7); 
+} 
+
+/* Password Toggle Icon */
+.password-wrapper { 
+    position: relative; 
+} 
+
+.password-toggle { 
+    position: absolute; 
+    right: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    border: none; 
+    background: rgba(255, 255, 255, 0.08); 
+    border-radius: 50%; 
+    width: 40px; /* Diperbesar dari 36px */
+    height: 40px; /* Diperbesar dari 36px */
+    padding: 0; 
+    cursor: pointer; 
+    display: grid; 
+    place-items: center; 
+    transition: transform 0.2s ease, background 0.2s ease; /* Efek transisi tombol mata */
+} 
+
+.password-toggle::before { 
+    content: ''; 
+    width: 20px; 
+    height: 20px; 
+    display: block; 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    /* DIUBAH MENJADI MERAH (%23e53e3e) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 24 24'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z' fill='none' stroke='%23e53e3e' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='3' fill='none' stroke='%23e53e3e' stroke-width='2'/%3E%3C/svg%3E"); 
+    transition: opacity 0.2s ease;
+} 
+
+.password-toggle.visible::before { 
+    /* DIUBAH MENJADI MERAH (%23e53e3e) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 24 24'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z' fill='none' stroke='%23e53e3e' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3Cpath d='M1 1l22 22' fill='none' stroke='%23e53e3e' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E"); 
+}
+
+.password-toggle:focus { 
+    outline: none;  
+} 
+
+/* Opsi Efek Hover: Membuat bulatan latar belakang sedikit berubah saat disentuh kursor */
+.password-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-50%) scale(1.05); /* Sedikit membesar saat hover */
+}
+
+/* Opsi Efek Active: Memberi feedback visual saat tombol mata diklik */
+.password-toggle:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Opsi Tambahan */
+.options { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 0.9rem; /* Diperbesar dari 0.8rem */
+    margin-bottom: 35px; /* Diperbesar dari 25px */
+} 
+
+.options a { 
+    color: white; 
+    text-decoration: none; 
+} 
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Tombol Submit */
+.btn-submit { 
+    width: 100%; 
+    padding: 14px; /* Diperbesar dari 10px */
+    border-radius: 10px; /* Diperbesar dari 8px */
+    border: none; 
+    background: white; 
+    color: #2c1a4d; 
+    font-weight: 600; 
+    font-size: 1.1rem; /* Tambahan ukuran teks tombol */
+    cursor: pointer; 
+    margin-bottom: 10px; 
+    transition: opacity 0.2s;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
